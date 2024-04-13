@@ -12,7 +12,10 @@
       padding: 0;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: center;   
+      @media (max-height: 600px) {
+        align-items: start;
+      }     
       height: 100vh;
     }
 
@@ -63,14 +66,21 @@
       background-color: #e6534d;
     }
 
-    #success-animation img {
-      width: 100%; /* Adjust width as needed */
-      height: auto; /* Maintain aspect ratio */
+    #success-animation {
+      /* display: none; */
+      margin-top: 20px;
     }
 
-    #success-animation {
+    #success-gif {
+      width: 100%; /* Adjust width as needed */
+      height: auto; /* Maintain aspect ratio */
       display: none;
-      margin-top: 20px;
+    }
+
+    #wrong-gif {
+      width: 100%; /* Adjust width as needed */
+      height: auto; /* Maintain aspect ratio */
+      display: none;
     }
   </style>
 </head>
@@ -85,7 +95,8 @@
 
     <div id="success-animation">
       <!-- Replace this with your success animation -->
-      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2Jnc3RlcG50b3N3cmVkb3oxaWI3NDhycmY5OWZnd2RudDg2NGpyciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/artj92V8o75VPL7AeQ/giphy.gif" alt="Success">
+      <img id="success-gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2Jnc3RlcG50b3N3cmVkb3oxaWI3NDhycmY5OWZnd2RudDg2NGpyciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/artj92V8o75VPL7AeQ/giphy.gif" alt="Success">
+      <img id="wrong-gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWh6Nmxtd2JwaWJmYWxxeDQ1djdmZGNrM3NoamtjNTczNm1zaWpsZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hPPx8yk3Bmqys/giphy-downsized-large.gif" alt="Success">
     </div>
   </div>
 
@@ -95,14 +106,17 @@
       const validCities = ['durbuy']; // Sample list of cities for demonstration
       
       if (validCities.includes(cityName)) {
-        document.getElementById('success-animation').style.display = 'block';
+        document.getElementById('success-gif').style.display = 'block';
+        document.getElementById('wrong-gif').style.display = 'none';
         
         //setTimeout(() => {
         //  alert('City verified successfully!'); // You can replace this with any other action you want to take upon successful city verification
         //}, 2000); // Adjust the time as needed for the animation duration
       
       } else {
-        alert('Sorry, this is not the right location.');
+//        alert('Sorry, this is not the right location.');
+        document.getElementById('success-gif').style.display = 'none';
+        document.getElementById('wrong-gif').style.display = 'block';
       }
     }
   </script>
