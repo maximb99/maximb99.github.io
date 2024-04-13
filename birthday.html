@@ -21,7 +21,7 @@
       border-radius: 10px;
       padding: 20px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      max-width: 500px;
+      max-width: 400px;
       width: 100%;
     }
 
@@ -63,6 +63,11 @@
       background-color: #e6534d;
     }
 
+    #success-animation img {
+      width: 100%; /* Adjust width as needed */
+      height: auto; /* Maintain aspect ratio */
+    }
+
     #success-animation {
       display: none;
       margin-top: 20px;
@@ -71,7 +76,7 @@
 </head>
 <body>
   <div class="container">
-    <h1>Happy Birthday!</h1>
+    <h1>Happy Birthday Marrrgot!</h1>
     <p>Wishing you a fantastic day filled with joy and happiness!</p>
 
     <label for="cityInput">Enter our destination:</label>
@@ -86,7 +91,7 @@
 
   <script>
     function verifyCity() {
-      const cityName = document.getElementById('cityInput').value.toLowerCase();
+      const cityName = document.getElementById('cityInput').value.toLowerCase().trim();
       const validCities = ['durbuy']; // Sample list of cities for demonstration
       
       if (validCities.includes(cityName)) {
@@ -97,7 +102,7 @@
         //}, 2000); // Adjust the time as needed for the animation duration
       
       } else {
-        alert('Sorry, the city is not recognized. Please try again.');
+        alert('Sorry, this is not the right location.');
       }
     }
   </script>
