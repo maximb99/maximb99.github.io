@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday!</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 100%;
+    }
+
+    h1 {
+      color: #ff6f61;
+    }
+
+    p {
+      color: #444;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    input[type="text"] {
+      width: calc(100% - 85px);
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #ff6f61;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e6534d;
+    }
+
+    #success-animation {
+      display: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Happy Birthday!</h1>
+    <p>Wishing you a fantastic day filled with joy and happiness!</p>
+
+    <label for="cityInput">Enter our destination:</label>
+    <input type="text" id="cityInput">
+    <button onclick="verifyCity()">Verify</button>
+
+    <div id="success-animation">
+      <!-- Replace this with your success animation -->
+      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2Jnc3RlcG50b3N3cmVkb3oxaWI3NDhycmY5OWZnd2RudDg2NGpyciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/artj92V8o75VPL7AeQ/giphy.gif" alt="Success">
+    </div>
+  </div>
+
+  <script>
+    function verifyCity() {
+      const cityName = document.getElementById('cityInput').value.toLowerCase();
+      const validCities = ['durbuy']; // Sample list of cities for demonstration
+      
+      if (validCities.includes(cityName)) {
+        document.getElementById('success-animation').style.display = 'block';
+        
+        //setTimeout(() => {
+        //  alert('City verified successfully!'); // You can replace this with any other action you want to take upon successful city verification
+        //}, 2000); // Adjust the time as needed for the animation duration
+      
+      } else {
+        alert('Sorry, the city is not recognized. Please try again.');
+      }
+    }
+  </script>
+</body>
+</html>
